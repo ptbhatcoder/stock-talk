@@ -24,7 +24,7 @@ const AppWithRoutes: React.FC<{}> = function () {
 const App: React.FC<{}> = function () {
   return (
     <StockAPIManagerContext.Provider
-      value={new AlphavantageAPIManager(ALPHAVANTAGE_API_KEY, 300)}
+      value={new AlphavantageAPIManager(ALPHAVANTAGE_API_KEY)}
     >
       <div className="App">
         <BrowserRouter>

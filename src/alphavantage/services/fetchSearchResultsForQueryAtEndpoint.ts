@@ -1,16 +1,22 @@
+import { AxiosInstance } from "axios";
 import { SearchResult } from "../../api-manager";
 
 export const fetchSearchResultsForQueryAtEndpoint = async (
   query: string,
-  endPoint: string,
-  apiKey: string
+  instance: AxiosInstance,
+  apikey: string
 ): Promise<SearchResult[]> => {
-  const url = `${endPoint}?function=SYMBOL_SEARCH&keywords=${query}&apikey=${apiKey}`;
   let results = [];
   try {
-    const response = await fetch(url);
-    const data = await response.json();
-    results = data.bestMatches ?? [];
+    const response = await instance.get("", {
+      params: {
+        function: "SYMBOL_SEARCH",
+        keywords: query,
+        apikey,
+      },
+    });
+    const { data: { bestMatches = [] } = { bestMatches: [] } } = response;
+    results = (bestMatches as any) ?? [];
   } catch (error) {
     results = [];
   }
