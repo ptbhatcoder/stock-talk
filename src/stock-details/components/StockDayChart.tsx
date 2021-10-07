@@ -88,15 +88,17 @@ export const StockDayChart: React.FC<{ symbol: string }> = ({ symbol }) => {
 
 function formatStockData(stockData: Record<string, StockTimePoint>) {
   // Convert stockData from an object to an array
-  return Object.entries(stockData).map(
-    ([date, { open, high, low, close }]: [string, StockTimePoint]) => {
-      return {
-        date,
-        open: +open,
-        high: +high,
-        low: +low,
-        close: +close,
-      };
-    }
-  );
+  return stockData
+    ? Object.entries(stockData).map(
+        ([date, { open, high, low, close }]: [string, StockTimePoint]) => {
+          return {
+            date,
+            open: +open,
+            high: +high,
+            low: +low,
+            close: +close,
+          };
+        }
+      )
+    : [];
 }
