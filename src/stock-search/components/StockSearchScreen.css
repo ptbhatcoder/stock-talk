@@ -1,0 +1,9 @@
+.searchScreen {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchBar {
+  width: 100%;
+  height: var(--height-unit);
+}
