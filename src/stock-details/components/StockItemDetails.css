@@ -10,3 +10,40 @@
   color: var(--theme-color-light);
   padding: 20px;
 }
+
+.nameAndSymbol {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.name {
+  display: flex;
+  font-size: 20px;
+  font-family: arial, sans-serif;
+}
+
+.description {
+  text-align: justify;
+}
+
+.industry {
+  text-transform: capitalize;
+  margin: 2px;
+  margin-left: 5px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.vitals {
+  margin-top: 10px;
+  display: table;
+}
+
+.vitalRow {
+  display: table-row;
+}
+
+.vitalCell {
+  display: table-cell;
+  text-align: left;
+}

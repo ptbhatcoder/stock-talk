@@ -21,12 +21,45 @@ export const StockItemDetails: React.FC = () => {
       ?.fetchDetailsForStock(stock)
       ?.then((details) => details && setDetails(details));
   }, [stock, stockAPIManager]);
+  const {
+    Name,
+    Symbol,
+    Exchange,
+    Description,
+    Industry,
+    MarketCapitalization,
+    PERatio,
+    DividendYield,
+    Country,
+    Currency,
+  } = details;
   return (
     <div className="details">
-      <div>{JSON.stringify(details)}</div>
+      <div className="nameAndSymbol">
+        <div className="name">
+          {Name}
+          <span className="industry">{`(${Industry})`}</span>
+        </div>
+        <div className="symbol">{`${Exchange}: ${Symbol}`}</div>
+      </div>
       <div>
         <StockDayChart symbol={stock} />
       </div>
+      <div className="vitals">
+        <div className="vitalRow">
+          <div className="vitalCell">
+            {`Market-Cap: ${MarketCapitalization} ${Currency}`}
+          </div>
+          <div className="vitalCell">{`PE-Ratio: ${PERatio}`}</div>
+        </div>
+        <div className="vitalRow">
+          <div className="vitalCell">
+            {`Div-Yield: ${DividendYield} ${Currency}`}
+          </div>
+          <div className="vitalCell">{`Country: ${Country}`}</div>
+        </div>
+      </div>
+      <p className="description">{Description}</p>
     </div>
   );
 };
