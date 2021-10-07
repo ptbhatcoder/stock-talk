@@ -5,6 +5,7 @@ import {
   StockDetails,
   useStockAPIManager,
 } from "../../api-manager";
+import { StockDayChart } from "./StockDayChart";
 import "./StockItemDetails.css";
 
 export const StockItemDetails: React.FC = () => {
@@ -20,5 +21,10 @@ export const StockItemDetails: React.FC = () => {
       ?.fetchDetailsForStock(stock)
       ?.then((details) => details && setDetails(details));
   }, [stock, stockAPIManager]);
-  return <div className="details">{JSON.stringify(details)}</div>;
+  return (
+    <div className="details">
+      <div>{JSON.stringify(details)}</div>
+      <StockDayChart symbol={stock} />
+    </div>
+  );
 };

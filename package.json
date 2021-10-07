@@ -45,8 +45,11 @@
     "@types/lodash.debounce": "^4.0.6",
     "@types/react-router-dom": "^5.3.1",
     "axios": "^0.22.0",
+    "axios-cache-adapter": "^2.7.3",
+    "canvasjs-react-charts": "^1.0.5",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "localforage": "^1.10.0",
     "lodash.debounce": "^4.0.8",
     "prettier": "^2.4.1",
     "request": "^2.88.2"
