@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { SearchResult, StockAPIManager } from "../../api-manager";
+import { SearchResult, useStockAPIManager } from "../../api-manager";
 import { useDebounce } from "../../common/hooks/useDebounce";
 import { StockSearchResults } from "./StockSearchResults";
 import "./StockSearchScreen.css";
@@ -15,14 +15,13 @@ export const StockSearchScreen: React.FC<{}> = () => {
     []
   );
 
+  const stockAPIManager = useStockAPIManager();
   useDebounce(
     () => {
-      StockAPIManager.apiManager
-        ?.fetchSearchResults(query)
-        ?.then(setSearchResults);
+      stockAPIManager?.fetchSearchResults(query)?.then(setSearchResults);
     },
     300,
-    [query]
+    [query, stockAPIManager]
   );
 
   return (
