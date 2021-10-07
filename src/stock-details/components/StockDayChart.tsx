@@ -10,7 +10,7 @@ export const StockDayChart: React.FC<{ symbol: string }> = ({ symbol }) => {
     const fetchStockTimeSeries = async () => {
       const result = await stockAPIManager?.fetchStockTimeSeries(symbol);
       if (result) {
-        setStockData(formatStockData(result["Time Series (1min)"]));
+        setStockData(formatStockData(result["Time Series (Daily)"]));
       }
     };
     fetchStockTimeSeries();
@@ -73,6 +73,9 @@ export const StockDayChart: React.FC<{ symbol: string }> = ({ symbol }) => {
         data: [
           {
             type: "candlestick",
+            xValueFormatString: "MMM, YYYY",
+            yValueFormatString: "$###.#",
+            markerSize: 12,
             dataPoints: stockData.map(
               ({ date, open, high, low, close }: any) => ({
                 x: new Date(date),

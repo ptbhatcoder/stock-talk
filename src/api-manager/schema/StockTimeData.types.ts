@@ -17,5 +17,5 @@ export interface StockTimePoint {
 
 export interface StockTimeData {
   "Meta Data": StockTimeMetadata;
-  "Time Series (1min)": Record<string, StockTimePoint>;
+  "Time Series (Daily)": Record<string, StockTimePoint>;
 }

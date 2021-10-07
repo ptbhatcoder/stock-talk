@@ -24,7 +24,9 @@ export const StockItemDetails: React.FC = () => {
   return (
     <div className="details">
       <div>{JSON.stringify(details)}</div>
-      <StockDayChart symbol={stock} />
+      <div>
+        <StockDayChart symbol={stock} />
+      </div>
     </div>
   );
 };

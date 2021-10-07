@@ -10,10 +10,9 @@ export const fetchStockTimeSeriesForStockAtEndpoint = async (
   try {
     const response = await instance.get("", {
       params: {
-        function: "TIME_SERIES_INTRADAY",
+        function: "TIME_SERIES_DAILY",
         symbol,
         apikey,
-        interval: "1min",
         outputsize: "full",
       },
     });
