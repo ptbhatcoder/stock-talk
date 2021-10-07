@@ -1,0 +1,11 @@
+.details {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-color-dark);
+  color: var(--theme-color-light);
+  padding: 20px;
+}

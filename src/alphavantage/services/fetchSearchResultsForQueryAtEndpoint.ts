@@ -1,6 +1,6 @@
 import { SearchResult } from "../../api-manager";
 
-export const fetchSearchResultsForEndpoint = async (
+export const fetchSearchResultsForQueryAtEndpoint = async (
   query: string,
   endPoint: string,
   apiKey: string
@@ -24,3 +24,5 @@ export const fetchSearchResultsForEndpoint = async (
     return transformedItem;
   });
 };
+
+// https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo
