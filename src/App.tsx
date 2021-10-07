@@ -6,7 +6,7 @@ import { StockSearchScreen } from "./stock-search";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { StockItemDetails } from "./stock-details";
 
-export const ALPHAVANTAGE_API_KEY = "EO0XS78XNV3VBYNN";
+const ALPHAVANTAGE_API_KEY = "EO0XS78XNV3VBYNN";
 
 const AppWithRoutes: React.FC<{}> = function () {
   return (
