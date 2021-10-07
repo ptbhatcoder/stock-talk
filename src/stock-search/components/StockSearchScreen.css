@@ -7,3 +7,14 @@
   width: 100%;
   height: var(--height-unit);
 }
+
+.searchBarAndButton {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchButton img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
