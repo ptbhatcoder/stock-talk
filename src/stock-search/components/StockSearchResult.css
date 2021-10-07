@@ -1,0 +1,11 @@
+.searchResult {
+  height: calc(1.5 * var(--height-unit));
+  display: flex;
+  align-items: center;
+  margin: 2px;
+  border: 1px solid pink;
+  border-radius: 10px;
+  padding: 0 2px;
+  background-color: var(--theme-color-light);
+  color: var(--theme-color-dark);
+}

@@ -1,12 +1,9 @@
 import React from "react";
 import { StockSearchResultProps } from "../schema/StockSearchResult.types";
+import "./StockSearchResult.css";
 
 export const StockSearchResult: React.FC<StockSearchResultProps> = ({
-  stockPreview,
+  stockPreview: { name, symbol },
 }) => {
-  return (
-    <li>
-      <div>{JSON.stringify(stockPreview)}</div>
-    </li>
-  );
+  return <div className="searchResult">{`${symbol} ( ${name} )`}</div>;
 };

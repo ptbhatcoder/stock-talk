@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { SearchResult, StockAPIManager } from "../../api-manager";
 import { useDebounce } from "../../common/hooks/useDebounce";
-import { StockSearchResult } from "./StockSearchResult";
+import { StockSearchResults } from "./StockSearchResults";
 import "./StockSearchScreen.css";
 
 export const StockSearchScreen: React.FC<{}> = () => {
@@ -34,11 +34,7 @@ export const StockSearchScreen: React.FC<{}> = () => {
         value={query}
         onChange={onQueryChange}
       />
-      <ol>
-        {searchResults.map((result) => (
-          <StockSearchResult stockPreview={result} />
-        ))}
-      </ol>
+      <StockSearchResults results={searchResults} />
     </div>
   );
 };
