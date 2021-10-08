@@ -49,7 +49,7 @@ export const StockSearchScreen: React.FC<{}> = () => {
         <input
           type="text"
           className="searchBar"
-          placeholder="Search for a stock here"
+          placeholder="Type a Stock Symbol (Ex: MSFT)"
           value={query}
           onChange={onQueryChange}
         />
@@ -61,7 +61,7 @@ export const StockSearchScreen: React.FC<{}> = () => {
         </button>
       </div>
 
-      <StockSearchResults results={searchResults} />
+      <StockSearchResults results={searchResults} showError={!!query.length} />
     </div>
   );
 };
